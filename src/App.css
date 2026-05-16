@@ -1,0 +1,13 @@
+.link-button {
+    background: none;     /* Usuwa domyślne szare tło */
+    border: none;         /* Usuwa ramkę przycisku */
+    color: blue;       /* Ustawia niebieski kolor tekstu */
+    padding: 0;           /* Usuwa wewnętrzne marginesy */
+    font: inherit;        /* Sprawia, że tekst ma taki sam rozmiar jak otoczenie */
+    cursor: pointer;      /* Zmienia kursor na "rączkę" po najechaniu */
+}
+
+.link-button:hover {
+    text-decoration: underline; /* Pokazuje podkreślenie po najechaniu myszką */
+    color: #004499;             /* Opcjonalnie: lekko ciemniejszy niebieski przy hoverze */
+}

@@ -1,6 +1,7 @@
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
 import {useState} from "react";
+import "milligram";
 
 function App() {
     const [email, setEmail] =
@@ -19,15 +20,31 @@ function App() {
         setEmail(event.target.value);
     }
 
+    function handleChangeScreen(value) {
+        setScreen(value)
+    }
+
+    const [screen, setScreen] =
+        useState('start')
+
     return (
         <div>
-            <h1>System do zapisów na zajęcia</h1>
-            <h2>Twój email to {email}</h2>
-            <p>{message}</p>
-            <input type="text" value={email} onChange={handleChange}/>
-            <button type="button" onClick={() => alert(email)}>
-                Wyświetl mój e-mail w alercie
-            </button>        </div>
+            <h1>Witaj w systemie do zapisów na zajęcia</h1>
+            { screen==='start' && <div>
+                <p>Zaloguj się e-mailem: <input type="text" value={email} onChange={handleChange}/>
+                    <button type="button" onClick={() => handleChangeScreen('welcome')}>
+                        Wchodzę
+                    </button></p>
+                {/*<p>{message}</p>*/}
+            </div>}
+            { screen==='welcome' && <div>
+                <h2>Witaj {email}</h2>
+                <button type="button" onClick={() => handleChangeScreen('start')}>
+                    Wyloguj
+                </button>
+            </div> }
+        </div>
+
     );
 }
 
