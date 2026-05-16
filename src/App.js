@@ -4,23 +4,11 @@ import {useState} from "react";
 import "milligram";
 import LoginForm from "./LoginForm";
 import UserPanel from "./UserPanel";
+import MeetingsPage from "./meetings/MeetingsPage";
 
 function App() {
     const [loggedIn, setLoggedIn] =
         useState(null);
-
-    // let message;
-    // if (email.length < 10) {
-    //     message = <div>Ale masz małego e-maila!</div>;
-    // } else if (email.length < 20) {
-    //     message = <div>Twój adres e-mail jest w sam raz.</div>;
-    // } else {
-    //     message = <div>Nie zapychaj serwerów, skróć!.</div>;
-    // }
-
-    // function handleChange(event) {
-    //     setEmail(event.target.value);
-    // }
 
     function login(userEmail) {
         setLoggedIn(userEmail);
@@ -35,8 +23,13 @@ function App() {
             <h1>System do zapisów na zajęcia</h1>
             {
                 loggedIn
-                    ? <UserPanel username={loggedIn} onLogout={logout}/>
-                    : <LoginForm onLogin={login}/>
+                    ? <>
+                        <UserPanel username={loggedIn} onLogout={logout}/>
+                        <MeetingsPage username={loggedIn} onLogout={logout}/>
+                    </>
+                    : <div> <LoginForm onLogin={login}/>
+                </div>
+
             }
         </div>
     );

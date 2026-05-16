@@ -1,8 +1,8 @@
 export default function UserPanel(props) {
     return (
-        <div>
-            <h2>Witaj {props.username}</h2>
-            <button type="button" onClick={props.onLogout}>
+        <div className="clearfix">
+            <h2 className="float-left " >Witaj {props.username}!</h2>
+            <button className="float-right button button-outline" type="button" onClick={props.onLogout}>
                 Wyloguj
             </button>
         </div>

@@ -19,7 +19,7 @@ export default function LoginForm(props) {
         <label>Zaloguj się e-mailem</label>
         <input type="text" value={email} onChange={
             (e) => setEmail(e.target.value)}/>
-        <p>{message}</p>
+        {/*<p>{message}</p>*/}
         <button type="button" onClick={
             () => props.onLogin(email)}>
             Wchodzę
