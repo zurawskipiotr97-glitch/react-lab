@@ -25,7 +25,9 @@ function App() {
             <h2>Twój email to {email}</h2>
             <p>{message}</p>
             <input type="text" value={email} onChange={handleChange}/>
-        </div>
+            <button type="button" onClick={() => alert(email)}>
+                Wyświetl mój e-mail w alercie
+            </button>        </div>
     );
 }
 
